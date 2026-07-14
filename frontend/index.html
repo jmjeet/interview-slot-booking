@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Interview Booking</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<section class="hero">
+
+    <div class="overlay"></div>
+
+    <nav class="navbar">
+        <div class="brand">
+            ZEPCRUIT
+        </div>
+
+        <div class="nav-links">
+            <a href="#">Careers</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+
+        <div class="status">
+            <span></span>
+            Interview scheduling open
+        </div>
+    </nav>
+
+
+    <div class="hero-content">
+
+        <p class="eyebrow">YOUR NEXT OPPORTUNITY</p>
+
+        <h1>
+            Take the next step<br>
+            in your career.
+        </h1>
+
+        <p class="description">
+            Choose a convenient interview slot and confirm your meeting
+            with our recruitment team.
+        </p>
+
+        <button
+            class="scroll-button"
+            onclick="document.getElementById('bookingPanel').scrollIntoView()"
+        >
+            Book your interview
+            <span>→</span>
+        </button>
+
+    </div>
+
+
+    <section class="booking-panel" id="bookingPanel">
+
+        <div class="panel-title">
+            <span>01</span>
+
+            <div>
+                <h2>Schedule your interview</h2>
+                <p>Complete the details and choose an available slot.</p>
+            </div>
+        </div>
+
+
+        <form id="bookingForm">
+
+            <div class="field">
+                <label for="name">Full name</label>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your full name"
+                    autocomplete="name"
+                >
+            </div>
+
+
+            <div class="field">
+                <label for="email">Email address</label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="name@example.com"
+                    autocomplete="email"
+                >
+            </div>
+
+
+            <div class="field slot-field">
+                <label for="slotSelect">Interview slot</label>
+
+                <select id="slotSelect">
+                    <option value="">Loading slots...</option>
+                </select>
+            </div>
+
+
+            <button id="bookButton" class="confirm-button" type="submit">
+                <span>Confirm booking</span>
+                <span>→</span>
+            </button>
+
+        </form>
+
+
+        <div id="message"></div>
+
+    </section>
+
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>

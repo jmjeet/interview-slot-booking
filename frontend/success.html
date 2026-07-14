@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Booking Confirmed</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<section class="hero success-page">
+
+    <div class="overlay"></div>
+
+    <nav class="navbar">
+        <div class="brand">ZEPCRUIT</div>
+    </nav>
+
+    <div class="success-card">
+
+        <div class="success-icon">✓</div>
+
+        <p class="eyebrow">BOOKING CONFIRMED</p>
+
+        <h1>Your interview slot is booked.</h1>
+
+        <p class="success-description">
+            Thank you for scheduling your interview.
+            Our recruitment team will contact you shortly with the next steps.
+        </p>
+
+        <div class="success-details" id="bookingDetails"></div>
+
+        <a href="index.html" class="home-button">
+            <span>Back to homepage</span>
+            <span>→</span>
+        </a>
+
+    </div>
+
+</section>
+
+<script>
+    const booking = JSON.parse(
+        sessionStorage.getItem("confirmedBooking")
+    );
+
+    const details = document.getElementById("bookingDetails");
+
+    if (booking) {
+        details.innerHTML = `
+            <div>
+                <span>Date</span>
+                <strong>${booking.date}</strong>
+            </div>
+
+            <div>
+                <span>Time</span>
+                <strong>${booking.time}</strong>
+            </div>
+
+            <div>
+                <span>Email</span>
+                <strong>${booking.email}</strong>
+            </div>
+        `;
+    }
+</script>
+
+</body>
+</html>
